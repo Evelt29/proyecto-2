@@ -14,7 +14,7 @@ class Alumno():
         return calificacion
     
     
-    def Prom(self):
+    def promedio(self):
         ZeroDivisionError
         try:
             prom = sum(self.calificacion) /len(self.calificacion)
@@ -23,7 +23,7 @@ class Alumno():
         return prom
     
     def __str__(self):
-        return f"matricula: {self.matricula} | nombre: {self.nombre}  {self.apellido} | calificación: {self.calificacion} | final: {self.promedio}"
+        return f"matricula: {self.matricula} | nombre: {self.nombre}  {self.apellido} | calificación: {self.calificacion} | final: {self.prom}"
     
 class gradAlum(Alumno):
     def __init__(self,matricula,nombre,apellido,edad):
@@ -42,7 +42,6 @@ class gradAlum(Alumno):
     def setDate(self,fecha):
         self.fecha = fecha
         return fecha
-    
     def getDate(self):
         prom = self.prom()
         gradDate = " "
