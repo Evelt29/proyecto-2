@@ -18,47 +18,67 @@ class Alumno():
     def getProm(self):
         ZeroDivisionError
         try:
-            if self.promedio != None:
+            if type(self.promedio) != type(None):
                 prom = sum(self.calificacion) /len(self.calificacion)
         except Exception as e:
             print(f"error desconocido")
         return prom  
     def __str__(self):
-        return f"matricula: {self.matricula} | nombre: {self.nombre}  {self.apellido} | calificación: {self.calificacion} | promedio: {self.promedio} | Grad?: {self.graduacion} | fecha: {self.fecha} | tesis: {self.tesis}"
+        return f"matricula: {self.matricula} | nombre: {self.nombre}  {self.apellido} | calificación: {self.calificacion} | final: {self.promedio}"
     
 #fin clase alumno-----------------------------------------------------------------------------------------------------------------------------
       
 class gradAlumno(Alumno):
-    def __init__(self,matricula,nombre,apellido,edad,graduacion,fecha=None,tesis=None):
+    def __init__(self,matricula,nombre,apellido,edad,fecha,graduacion,tesis):
         super().__init__(matricula,nombre,apellido,edad)
-        self.graduacion= graduacion
-        self.fecha = fecha
-        self.tesis = tesis
+        self.fecha = fecha  
+        self.graduacion = graduacion
+        self. tesis = tesis
         pass
-    def setGraduacion(self,graduación):
-        self.graduacion = graduación
-        return 0
+    def setGraduacion(self,graduacion):
+        self.graduacion = graduacion
+        return graduacion
     def getGraduacion(self):
-        if self.promedio > 6:
-            print("sí")
+        prom = self.promedio
+        graduacion = " "
+
+        if self.promedio <= 5.9:
+            graduacion = "NO"
         else:
-            print("No")
+            graduacion = "SÍ"
+        return graduacion
+
 
     def setFecha(self,fecha):
         self.fecha = fecha
-        return 0
+        return fecha
+    
     def setTesis(self,tesis):
         self.tesis = tesis
-        return 0
+        return tesis
+    
     def getFecha(self):
-        if self.promedio > 6:
-            print ("23/05/28")
+        prom = self.promedio
+        dateGrad = " "
+        if self.promedio <= 5.9:
+            dateGrad = "N/A"
         else:
-            print("N/A")
+            fecha = self.fecha
+            dateGrad = fecha
+        return dateGrad
+    
     def getTesis(self):
-        if self.promedio > 6:
-            print(" tesis ")
-        else: 
-            print("N/A")
-   
-        return f"matricula: {self.matricula} | nombre: {self.nombre}  {self.apellido} | calificación: {self.calificacion} | final: {self.prom_final} | Grad?: {self.graduacion} | fecha: {self.fecha} | tesis: {self.tesis} "
+        prom = self.promedio
+        tesis = " "
+        if self.promedio <= 5.9:
+            tesisG = "N/A"
+        else:
+            tesis = self.tesis
+            tesisG = tesis
+        return tesisG
+    def __str__(self):
+        prom = self.promedio()
+        if prom <= 5.9:
+            return f"matricula: {self.matricula} | nombre: {self.nombre}  {self.apellido} | edad: {self.edad}" 
+        else:
+            return f"nombre completo: {self.nombre}  {self.apellido} | edad: {self.edad} | matricula: {self.matricula} | se gradua el: {self.fecha} | con su tesis: {self.tesis}"

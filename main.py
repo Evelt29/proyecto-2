@@ -1,14 +1,18 @@
 from lib import *
-print("         \033[42m  CALIFICACIONES DE ESTUDIANTES DE ACTUARÍA DE UTECA     \033[0m ")
+print("         \033[42m  DATOS ESTUDIANTES DE ACTUARÍA UTECA     \033[0m ")
 
 
 
 alum1 = Alumno(601049,"Zaira","Durán","35")
-alum1.setCalificacion(10)
-alum1.setCalificacion(9)
-alum1.setCalificacion(8)
-alum1.setCalificacion(10)
-alum1.setCalificacion(9)
+alum1.setCalificacion(int(10))
+alum1.setCalificacion(int(9))
+alum1.setCalificacion(int(8))
+alum1.setCalificacion(int(10))
+alum1.setCalificacion(int(9))
+alum1.setGraduacion("01/07/2013")
+alum1.setTesis("Los neutrinos saben a jugo de Uva")
+
+
 print(alum1)
 alum2 = Alumno ( 601048, "Frainé", "Durán", "34")
 alum2.setCalificacion(6)
@@ -59,3 +63,23 @@ alum8.setCalificacion(10)
 alum8.setCalificacion(9)
 alum8.setCalificacion(8)
 print(alum8)
+
+
+
+print("         \033[42m  DATOS ESTUDIANTES DE ACTUARÍA UTECA     \033[0m ")
+
+print("                                                   CALIFICACIONES                                                   ")
+print("--------------------------------------|-------------------------------|------------------------------------------------")
+print("MATRICULA   | NOMBRE ALUMNO           |   1   |  2  |  3  |  4  |  5  | FINAL | GRAD? |    FECHA   |  TESIS  ")
+print("--------------------------------------|-------------------------------|------------------------------------------------")
+print(f"{alum1.matricula}|\033[1m{alum1.nombre} {alum1.apellido}      | {alum1.calificacion[0]} | {alum1.calificacion[1]} | {alum1.calificacion[2]} | {alum1.calificacion[3]} | {alum1.calificacion[4]} | {alum1.promedio} |")
+print(f"{alum2.matricula}|\033[1m{alum2.nombre} {alum2.apellido}\033[0m      | {alum2.calificacion[0]} | {alum2.calificacion[1]} | {alum2.calificacion[2]} | {alum2.calificacion[3]} | {alum2.calificacion[4]} | {alum2.promedio} |")
+print(f"{alum3.matricula}|\033[1m{alum3.nombre} {alum3.apellido}\033[0m      | {alum3.calificacion[0]} | {alum3.calificacion[1]} | {alum3.calificacion[2]} | {alum3.calificacion[3]} | {alum3.calificacion[4]} | {alum3.promedio} |")
+print(f"{alum4.matricula}|\033[1m{alum4.nombre} {alum4.apellido}\033[0m      | {alum4.calificacion[0]} | {alum4.calificacion[1]} | {alum4.calificacion[2]} | {alum4.calificacion[3]} | {alum4.calificacion[4]} | {alum4.promedio} |")
+print(f"{alum5.matricula}|\033[1m{alum5.nombre} {alum5.apellido}\033[0m      | {alum5.calificacion[0]} | {alum5.calificacion[1]} | {alum5.calificacion[2]} | {alum5.calificacion[3]} | {alum5.calificacion[4]} | {alum5.promedio} |")
+print(f"{alum6.matricula}|\033[1m{alum6.nombre} {alum6.apellido}\033[0m      | {alum6.calificacion[0]} | {alum6.calificacion[1]} | {alum6.calificacion[2]} | {alum6.calificacion[3]} | {alum6.calificacion[4]} | {alum6.promedio} |")
+print(f"{alum7.matricula}|\033[1m{alum7.nombre} {alum7.apellido}\033[0m      | {alum7.calificacion[0]} | {alum7.calificacion[1]} | {alum7.calificacion[2]} | {alum7.calificacion[3]} | {alum7.calificacion[4]} | {alum7.promedio} |")
+print(f"{alum8.matricula}|\033[1m{alum8.nombre} {alum8.apellido}\033[0m      | {alum8.calificacion[0]} | {alum8.calificacion[1]} | {alum8.calificacion[2]} | {alum8.calificacion[3]} | {alum8.calificacion[4]} | {alum8.promedio} |")
+
+
+
