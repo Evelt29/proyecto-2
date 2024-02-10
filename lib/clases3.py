@@ -46,37 +46,28 @@ class gradAlum(Alumno):
         return 0
     
     def getGrad(self):
-        promedio = self.promedio()
-        if self.fecha != None and self.promedio <=5.9:
-            dateGrad = "NO"
+        if self.graduacion == None and  self.promedio <=5.9:
+            print("NO")
         else: 
-            dateGrad = "SI"
-        return dateGrad
+            print("SI") 
 
 
     def getDate(self):
         promedio = self.promedio()
-        gradDate = " "
-        if promedio <= 5.9:
-            gradDate = "N/A"
-        else:
-            fecha = self.fecha
-            gradDate = fecha
-        return gradDate
+        if self.fecha == None and self.promedio <= 5.9:
+            print("N/A")
+        else: 
+            print(self.fecha)
 
     def getTesis(self):
-        promedio = self.promedio()
-
-        if promedio <= 5.9:
-            print("N/A")
+        if self.tesis == None and self. promedio  <=5.9:
+            print("N/a")
         else:
-            tesis = self.tesis
-            gradTesis = tesis
-        return gradTesis
+            return self.tesis
 
     def __str__(self): 
         promedio = self.getPromedio()
         if promedio <= 5.9:
-            return f" Matricula: {self.matricula} Nombre completo: {self.nombre} {self.apellido} Edad: {self.edad} Alumno no graduado"
+            return f"  Nombre completo: {self.nombre} {self.apellido} Matricula: {self.matricula} Edad: {self.edad} Alumno no graduado"
         else:
             return f" Nombre Completo: {self.nombre} {self.apellido} Edad: {self.edad} Matricula: {self.matricula} Graduado: {self.fecha} con la Tesis {self.tesis}"
