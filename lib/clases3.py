@@ -5,14 +5,13 @@ class Alumno():
         self.apellido=apellido
         self.calificacion=[]
         self.edad=edad
-       
+
         
         pass
     
     def setCalificacion(self,calificacion):
         self.calificacion.append(calificacion)
-        return calificacion
-    
+        return calificacion 
     
     def promedio(self):
         ZeroDivisionError
@@ -23,13 +22,31 @@ class Alumno():
         return prom
     
     def __str__(self):
-        return f"matricula: {self.matricula} | nombre: {self.nombre}  {self.apellido} | calificación: {self.calificacion} | final: {self.prom}"
+        return f"matricula: {self.matricula} | nombre: {self.nombre}  {self.apellido} | calificación: {self.calificacion} "
     
 class gradAlum(Alumno):
-    def __init__(self,matricula,nombre,apellido,edad):
+    def __init__(self,matricula,nombre,apellido,edad,fecha=None,tesis=None,graduacion=None):
         super().__init__(matricula,nombre,apellido,edad)
+        self.fecha = fecha
+        self.tesis = tesis
+        self.graduacion = graduacion
+        
         pass
 
+    def setDate(self,fecha):
+        self.fecha = fecha
+        return 0
+    
+    def setTesis(self,tesis):
+        self.tesis = tesis
+        return 0
+    def setGraduacion(self,graduacion):
+        self.graduacion = graduacion
+        return 0
+    def setprom(self,prom):
+        self.prom = prom
+        return prom 
+    
     def getGrad(self):
         prom = self.prom()
         dateGrad = " "
@@ -39,9 +56,7 @@ class gradAlum(Alumno):
             dateGrad = "SI"
         return dateGrad
 
-    def setDate(self,fecha):
-        self.fecha = fecha
-        return fecha
+
     def getDate(self):
         prom = self.prom()
         gradDate = " "
@@ -51,10 +66,7 @@ class gradAlum(Alumno):
             fecha = self.fecha
             gradDate = fecha
         return gradDate
-    
-    def setTesis(self,tesis):
-        self.tesis = tesis
-        return tesis
+
     def getTesis(self):
         prom = self.prom()
         gradTesis = " "
@@ -65,9 +77,8 @@ class gradAlum(Alumno):
             gradTesis = tesis
         return gradTesis
 
-    def __str__(self):
-        prom = self.prom()
-        if prom <= 5.9:
-            return f" Matricula: {self.matricula} Nombre completo: {self.nombre} {self.apellido} Edad: {self.edad} Alumno no graduado"
-        else:
-            return f" Nombre Completo: {self.nombre} {self.apellido} Edad: {self.edad} Matricula: {self.matricula} Graduado: {self.fecha} con la Tesis {self.tesis}"
+        def __str__(self): 
+            if prom <= 5.9:
+                return f" Matricula: {self.matricula} Nombre completo: {self.nombre} {self.apellido} Edad: {self.edad} Alumno no graduado"
+            else:
+                return f" Nombre Completo: {self.nombre} {self.apellido} Edad: {self.edad} Matricula: {self.matricula} Graduado: {self.fecha} con la Tesis {self.tesis}"
